@@ -5,8 +5,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return "Flask app running on Render!"
+    return "✅ Flask app chạy trên Render bằng gunicorn!"
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 10000))
+    # Chỉ chạy local test
+    port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
